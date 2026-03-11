@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinSpire | Your Boards</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            padding-top: 70px;
+        }
+        /* Common styles imported from index.html (repeated for single-file mandate) */
+        .navbar { list-style-type: none; margin: 0; padding: 10px 20px; background-color: white; position: fixed; top: 0; width: 100%; display: flex; align-items: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 1000; }
+        .navbar a { display: block; color: black; text-align: center; padding: 10px 16px; text-decoration: none; font-size: 1.1rem; font-weight: 600; border-radius: 20px; margin-right: 8px; transition: background-color 0.3s ease; }
+        .navbar a:hover { background-color: #e9e9e9; }
+        .navbar .active-link { background-color: #000; color: white; }
+        .navbar img.logo { width: 35px; height: 35px; border-radius: 50%; margin-right: 15px; }
+        .navbar .search { flex-grow: 1; margin: 0 10px; }
+        .navbar .search input { background-color: #efefef; border-style: none; width: 100%; height: 48px; border-radius: 24px; font-size: 1rem; padding: 0 15px; box-sizing: border-box; font-weight: 500; }
+        .navbar .profile-img { width: 35px; height: 35px; border-radius: 50%; margin-left: 8px; }
+
+
+        .boards-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .boards-header h1 {
+            font-size: 2.2rem;
+            color: #333;
+            margin: 0;
+        }
+        .create-board-btn {
+            background-color: #e60023;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .create-board-btn:hover {
+            opacity: 0.8;
+        }
+        .boards-grid {
+            max-width: 1200px;
+            margin: 20px auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .board-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            text-decoration: none;
+            color: #333;
+            transition: box-shadow 0.3s ease;
+        }
+        .board-card:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .board-cover {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100px 100px;
+            height: 200px;
+            background-color: #eee;
+        }
+        .board-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .board-cover .main-img {
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+        }
+        .board-info {
+            padding: 15px;
+        }
+        .board-info h3 {
+            margin: 0 0 5px;
+            font-size: 1.4rem;
+        }
+        .board-info p {
+            margin: 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <a href = "index.html"><img src="images/logo.png" alt="logo"></a>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="boards.html" class="active-link">Your boards</a></li>
+        <li class="search"><input type="text" name="Search" placeholder="Search"></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="updates.html">Updates</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profile.html"><img src="images/profile.png" alt="Profile" class="profile-img"></a></li>
+    </ul>
+
+    <div class="boards-header">
+        <h1>Your Boards</h1>
+        <a href="#" class="create-board-btn">Create New Board</a>
+    </div>
+
+    <div class="boards-grid">
+        <!-- Mock Boards -->
+        <a href="#" class="board-card">
+            <div class="board-cover">
+            </div>
+            <div class="board-info">
+                <h3>Travel Dreams</h3>
+                <p>128 Pins</p>
+            </div>
+        </a>
+        <a href="#" class="board-card">
+            <div class="board-cover">
+            </div>
+            <div class="board-info">
+                <h3>Modern Minimalism</h3>
+                <p>64 Pins</p>
+            </div>
+        </a>
+        <a href="#" class="board-card">
+            <div class="board-cover">
+            </div>
+            <div class="board-info">
+                <h3>Foodie Favorites</h3>
+                <p>91 Pins</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
